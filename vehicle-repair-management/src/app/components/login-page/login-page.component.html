@@ -1,0 +1,63 @@
+<div class="login-form">
+  <div class="heading">Welcome To Vehicle Repair Management</div>
+  <div class="card">
+    <div class="card-body">
+      <form #loginForm="ngForm">
+        <p class="card-title">Login</p>
+        <div
+          class="form-group"
+          [class.has-error]="UserName.invalid && UserName.touched"
+        >
+          <label class="control-label" for="UserName" class="form-label"
+            >Username</label
+          >
+          <div class="ashterisk">*</div>
+          <input
+            type="text"
+            required
+            #UserName="ngModel"
+            [(ngModel)]="loginUser.UserName"
+            class="form-control"
+            id="UserName"
+            name="UserName"
+          />
+          <span class="help-block" *ngIf="UserName.invalid && UserName.touched">
+            Please enter username!
+          </span>
+        </div>
+        <div
+          class="form-group"
+          [class.has-error]="Password.invalid && Password.touched"
+        >
+          <label class="control-label" for="Password" class="form-label"
+            >Password</label
+          >
+          <div class="ashterisk">*</div>
+          <input
+            type="password"
+            #Password="ngModel"
+            [(ngModel)]="loginUser.Password"
+            class="form-control"
+            id="Password"
+            name="Password"
+            required
+          />
+          <span class="help-block" *ngIf="Password.invalid && Password.touched">
+            Please enter the password!!
+          </span>
+        </div>
+        <div class="text-center">
+          <button (click)="login()" class="btn btn-primary" type="submit">
+            Login
+          </button>
+          <div class="register">
+            <p class="mb-0">
+              Don't have an account?
+              <a href="register" class="register-btn">Register</a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

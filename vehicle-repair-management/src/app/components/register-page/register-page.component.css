@@ -1,0 +1,80 @@
+.register-form {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(45deg, #00dbde, #fc00ff);
+  height: 100vh;
+  padding-top: 1rem;
+  overflow-x: auto;
+}
+
+.card {
+  max-width: 400px;
+  margin: 2em auto;
+  margin-top: 1rem;
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.card-title {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.form-label {
+  margin-bottom: 0;
+}
+
+.form-control {
+  display: block;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  border-top: solid transparent;
+  border-left: solid transparent;
+  border-right: solid transparent;
+  padding: 0;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom-color: #3f51b5;
+}
+
+.has-error {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.help-block {
+  font-size: small;
+}
+
+.ashterisk {
+  display: inline;
+  color: red;
+  font-size: 20px;
+}
+
+.btn {
+  box-shadow: 0 5px 3px -3px rgb(0 0 0 / 20%), 0 4px 4px 0 rgb(0 0 0 / 14%),
+    0 3px 5px 0 rgb(0 0 0 / 12%);
+  background-color: #3f51b5;
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  outline: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0;
+}
+
+.form-group {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.login {
+  margin-bottom: 10px;
+}

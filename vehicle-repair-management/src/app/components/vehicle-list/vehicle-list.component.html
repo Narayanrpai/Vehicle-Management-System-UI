@@ -1,0 +1,91 @@
+<div class="list-container">
+  <app-nav-bar></app-nav-bar>
+
+  <div class="heading">
+    <h2 style="color: white">List of Vehicles Available</h2>
+  </div>
+
+  <div class="main">
+    <div class="input-wrap">
+      <input
+        (click)="getNames()"
+        type="search"
+        [(ngModel)]="vehicleName"
+        placeholder="Search for vehicles"
+      />
+      <button class="btn btn-primary search-button" (click)="goToSearch()">
+        Search
+      </button>
+    </div>
+    <div
+      *ngFor="let vehicle of vehicleNames | SearchPipe: vehicleName"
+      class="vehicle"
+    >
+      {{ vehicle }}
+    </div>
+  </div>
+
+  <div class="container" id="loop">
+    <div class="row">
+      <div class="col-md-3 mx-auto" *ngFor="let vehicle of vehicles">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title">Vehicle Id: {{ vehicle.vehicleId }}</p>
+            <p class="card-text">Name: {{ vehicle.vehicleName }}</p>
+            <p class="card-text">Type: {{ vehicle.vehicleType }}</p>
+            <p class="card-text">Category: {{ vehicle.categoryName }}</p>
+            <p class="card-text">Complaint: {{ vehicle.vehicleComplaint }}</p>
+            <p class="card-text">Repair Cost: Rs. {{ vehicle.repairCost }}/-</p>
+            <p class="card-text">Created By: {{ vehicle.createdBy }}</p>
+            <a
+              class="btn btn-success"
+              style="float: left"
+              routerLink="/updateVehicleDetails/{{ vehicle.vehicleId }}"
+              >Edit</a
+            >
+            <button
+              type="button"
+              class="btn btn-danger"
+              style="float: right"
+              (click)="DeleteVehicle(vehicle.vehicleId)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 mx-auto" *ngFor="let v of searchVehicle">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title">Vehicle Id: {{ v.vehicleId }}</p>
+            <p class="card-text">Name: {{ v.vehicleName }}</p>
+            <p class="card-text">Type: {{ v.vehicleType }}</p>
+            <p class="card-text">Category: {{ v.categoryName }}</p>
+            <p class="card-text">Complaint:{{ v.vehicleComplaint }}</p>
+            <p class="card-text">Repair Cost: Rs. {{ v.repairCost }}/-</p>
+            <p class="card-text">Created By: {{ v.createdBy }}</p>
+            <a
+              class="btn btn-success"
+              style="float: left"
+              routerLink="/updateVehicleDetails/{{ v.vehicleId }}"
+              >Edit</a
+            >
+            <button
+              type="button"
+              class="btn btn-danger"
+              style="float: right"
+              (click)="DeleteVehicle(v.vehicleId)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

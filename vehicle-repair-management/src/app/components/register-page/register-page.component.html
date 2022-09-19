@@ -1,0 +1,74 @@
+<div class="register-form">
+  <div class="card">
+    <div class="card-body">
+      <form #registerForm="ngForm">
+        <p class="card-title">Register</p>
+        <div class="form-group">
+          <label class="control-label" for="UserName" class="form-label"
+            >Username</label
+          >
+          <div class="ashterisk">*</div>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            #UserName="ngModel"
+            [(ngModel)]="registerUser.UserName"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="Email" class="form-label"
+            >Email</label
+          >
+          <div class="ashterisk">*</div>
+          <input
+            type="email"
+            id="Email"
+            name="Email"
+            [(ngModel)]="registerUser.Email"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="Password" class="form-label"
+            >Password</label
+          >
+          <div class="ashterisk">*</div>
+          <input
+            type="password"
+            id="Password"
+            name="Password"
+            [(ngModel)]="registerUser.Password"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="confirm" class="form-label"
+            >Confirm Password</label
+          >
+          <div class="ashterisk">*</div>
+          <input
+            type="password"
+            id="confirm"
+            name="confirm"
+            [(ngModel)]="confirmPassword"
+            class="form-control"
+          />
+        </div>
+        <div class="text-center">
+          <button (click)="register()" class="btn btn-primary" type="submit">
+            Register
+          </button>
+          <div class="login">
+            <p class="mb-0">
+              Already have an account?
+              <a href="login" class="login-btn">Login</a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
